@@ -91,7 +91,7 @@ export default function PostGrid({ refresh }: { refresh: number }) {
                 setActionLoading(true);
                 let errorMsg = "";
                 try {
-                  const res = await fetch("/api/posts/manage", {
+                  const res = await fetch("/api/posts", {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ id: deletePost.id }),

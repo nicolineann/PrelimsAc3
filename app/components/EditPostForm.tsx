@@ -19,7 +19,7 @@ export default function EditPostForm({ post, onSaved, onCancel }: {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("/api/posts/manage", {
+      const res = await fetch("/api/posts", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id: post.id, title, description, category, imageUrl }),
