@@ -9,10 +9,12 @@ export default function Header() {
           <UserButton afterSignOutUrl="/" />
         </SignedIn>
         <SignedOut>
-          <SignInButton>
-            <span style={{ color: '#111' }}>Sign in</span>
-          </SignInButton>
-          <SignUpButton />
+          <div className="flex gap-4">
+            <SignInButton>
+              <span className='text-pink-600'>LogIn</span>
+            </SignInButton>
+            <SignUpButton />
+          </div>
         </SignedOut>
       </nav>
     </header>

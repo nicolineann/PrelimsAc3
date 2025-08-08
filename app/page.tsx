@@ -17,7 +17,7 @@ export default function Home() {
       <Header />
       {/* Hero Section */}
       <section className="w-full flex flex-col items-center justify-center text-center py-16 px-4">
-        <img src="/file.svg" alt="Hero" className="mx-auto mb-6 w-32 h-32 object-contain drop-shadow-lg" />
+    <img src="/hero_logo.svg" alt="Hero" className="mx-auto mb-6 w-32 h-32 object-contain drop-shadow-lg" />
         <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 text-gray-900">Image for Posting and Sharing</h1>
         <p className="max-w-xl mx-auto text-lg text-gray-700 mb-8">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
