@@ -33,8 +33,9 @@ export default function EditPostForm({ post, onSaved, onCancel }: {
         throw new Error(msg);
       }
       onSaved();
-    } catch (err: any) {
-      setError(err.message || "Unknown error");
+    } catch (err: unknown) {
+      if (err instanceof Error) setError(err.message);
+      else setError("Unknown error");
     } finally {
       setLoading(false);
     }
@@ -63,7 +64,7 @@ export default function EditPostForm({ post, onSaved, onCancel }: {
       {error && <div className="text-red-500 text-sm">{error}</div>}
       <div className="flex gap-2">
         <button type="button" onClick={onCancel} className="flex-1 bg-gray-200 text-gray-700 py-2 rounded hover:bg-gray-300 transition">Cancel</button>
-        <button type="submit" disabled={loading} className="flex-1 bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition disabled:opacity-50">
+        <button type="submit" disabled={loading} className="flex-1 bg-pink-600 text-white py-2 rounded hover:bg-pink-700 transition disabled:opacity-50">
           {loading ? "Saving..." : "Save"}
         </button>
       </div>

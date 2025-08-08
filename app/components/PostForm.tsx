@@ -26,8 +26,9 @@ export default function PostForm({ onCreated }: { onCreated: () => void }) {
       setCategory("");
       setImageUrl("");
       onCreated();
-    } catch (err: any) {
-      setError(err.message || "Unknown error");
+    } catch (err: unknown) {
+      if (err instanceof Error) setError(err.message);
+      else setError("Unknown error");
     } finally {
       setLoading(false);
     }
@@ -61,7 +62,7 @@ export default function PostForm({ onCreated }: { onCreated: () => void }) {
         {imageUrl && <img src={imageUrl} alt="Preview" className="mt-2 rounded max-h-40" />}
       </div>
       {error && <div className="text-red-500 text-sm">{error}</div>}
-      <button type="submit" disabled={loading || !imageUrl} className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition disabled:opacity-50">
+      <button type="submit" disabled={loading || !imageUrl} className="w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700 transition disabled:opacity-50">
         {loading ? "Posting..." : "Post"}
       </button>
     </form>

@@ -26,10 +26,10 @@ export default function Home() {
               href="#"
               onClick={e => {
                 e.preventDefault();
-                const btn = document.querySelector('button.bg-blue-600');
+                const btn = document.querySelector('button.bg-pink-600');
                 if (btn && 'click' in btn) (btn as HTMLButtonElement).click();
               }}
-              className="inline-block px-8 py-3 bg-blue-600 text-white font-semibold rounded shadow hover:bg-blue-700 transition"
+              className="inline-block px-8 py-3 bg-pink-600 text-white font-semibold rounded shadow hover:bg-pink-700 transition"
             >
               Get started
             </a>
@@ -41,12 +41,12 @@ export default function Home() {
                 const signInBtn = document.querySelector('button[data-sign-in-button]');
                 if (signInBtn && 'dispatchEvent' in signInBtn) (signInBtn as HTMLButtonElement).dispatchEvent(new MouseEvent('click', { bubbles: true }));
               }}
-              className="inline-block px-8 py-3 bg-blue-600 text-white font-semibold rounded shadow hover:bg-blue-700 transition"
+              className="inline-block px-8 py-3 bg-pink-600 text-white font-semibold rounded shadow hover:bg-pink-700 transition"
             >
               Get started
             </a>
           )}
-          <a href="#learn-more" className="inline-block px-8 py-3 bg-white text-blue-600 font-semibold rounded shadow hover:bg-gray-100 transition border border-blue-600">Learn more →</a>
+          <a href="#learn-more" className="inline-block px-8 py-3 bg-white text-pink-600 font-semibold rounded shadow hover:bg-gray-100 transition border border-pink-600">Learn more →</a>
         </div>
       </section>
       <main className="flex-1 container mx-auto px-4 py-8">

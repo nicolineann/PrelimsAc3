@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import EditPostForm from "./EditPostForm";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 
 export type Post = {
   id: number;
@@ -44,7 +44,7 @@ export default function PostGrid({ refresh }: { refresh: number }) {
           <div className="text-xs text-gray-400 mt-2">{new Date(post.createdAt).toLocaleString()}</div>
           {user && user.id === post.userId && (
             <div className="flex gap-2 mt-3">
-              <button onClick={() => setEditPost(post)} className="flex-1 bg-yellow-400 text-white py-1 rounded hover:bg-yellow-500 transition">Edit</button>
+              <button onClick={() => setEditPost(post)} className="flex-1 bg-pink-400 text-white py-1 rounded hover:bg-pink-500 transition">Edit</button>
               <button onClick={() => setDeletePost(post)} className="flex-1 bg-red-500 text-white py-1 rounded hover:bg-red-600 transition">Delete</button>
             </div>
           )}

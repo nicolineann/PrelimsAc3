@@ -25,8 +25,11 @@ export async function PUT(req: NextRequest) {
       .returning();
     if (!updated.length) return NextResponse.json({ error: 'Not found or not authorized' }, { status: 404 });
     return NextResponse.json(updated[0]);
-  } catch (e: any) {
-    return NextResponse.json({ error: e.message || 'Unknown error' }, { status: 500 });
+  } catch (e: unknown) {
+    if (e instanceof Error) {
+      return NextResponse.json({ error: e.message }, { status: 500 });
+    }
+    return NextResponse.json({ error: 'Unknown error' }, { status: 500 });
   }
 }
 

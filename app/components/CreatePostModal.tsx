@@ -9,7 +9,7 @@ export default function CreatePostModal({ onCreated }: { onCreated: () => void }
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <button className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700 transition">Create New Post</button>
+        <button className="bg-pink-600 text-white px-4 py-2 rounded shadow hover:bg-pink-700 transition">Create New Post</button>
       </DialogTrigger>
       <DialogContent className="max-w-lg w-full p-0">
         <DialogHeader>
